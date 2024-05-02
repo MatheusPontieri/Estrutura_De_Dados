@@ -1,3 +1,4 @@
+import Atv 
 public class ArvoreBinaria {
     public No noRaiz;
 
@@ -47,38 +48,5 @@ public class ArvoreBinaria {
             postOrder(no.direita);
             System.out.println(no.elemento);
         }
-    }
-
-    public boolean buscar(int valor) {
-        return buscarNo(this.noRaiz, valor);
-    }
-
-    private boolean buscarNo(No raiz, int valor) {
-        if (raiz == null) {
-            return false;
-        }
-
-        if (raiz.elemento == valor) {
-            return true;
-        }
-
-        if (valor < raiz.elemento) {
-            return buscarNo(raiz.esquerda, valor);
-        } else {
-            return buscarNo(raiz.direita, valor);
-        }
-    }
-
-    void excluirRec(No raiz, int valor) {
-        if (raiz == null) 
-            return;
-        
-        if (valor < raiz.elemento) 
-            excluirRec(raiz.esquerda, valor);
-        else if (valor > raiz.elemento) 
-            excluirRec(raiz.direita, valor);
-        else 
-            raiz = null;
-    
     }
 }
